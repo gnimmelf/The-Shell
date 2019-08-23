@@ -1,7 +1,7 @@
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
-.post {
+.single.post {
     &-template .post {
         margin-top: 0;
         border-bottom: none;
@@ -16,10 +16,12 @@
     &-header #blog-logo:before {
         margin: 60px auto;
     }
-    &-content img {
-        display: block;
-        max-width: 100%;
-        margin: 0 auto;
+    &-content  {        
+        img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+        }
     }
     &-footer {
         position: relative;
