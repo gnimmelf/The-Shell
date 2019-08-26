@@ -1,0 +1,24 @@
+<article class="item {{post_class}}">
+
+    <header class="post-header">
+        <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+            {{#if tags}}on {{tags}}{{/if}}</span>
+        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+    </header>
+
+    <div class="post-card">
+
+        {{#if feature_image}}
+        <section class="post-featured-image">
+            <div class="aspect-ratio-square rotate-45">
+                <img src="{{img_url feature_image}}" alt="{{title}}" />
+            </div>
+        </section>
+        {{/if}}
+
+        <section class="post-excerpt">
+            <p>{{excerpt}}&hellip;</p>
+        </section>
+    </div>
+
+</article>

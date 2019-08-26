@@ -1,0 +1,47 @@
+{{!< default}}
+
+<article class="{{post_class}}">
+    {{> "post-header"}}
+</article>
+
+{{!-- tag cards --}}
+{{#get "tags" limit="all"}}
+<main class="content" role="main">
+
+    {{#foreach tags}}
+
+    <article class="item {{post_class}}">
+        <div class="post-card">
+
+            <section class="post-featured-image">
+                <a href="{{url}}"><span class="aspect-ratio-square rotate-45">
+                    {{#if feature_image}}
+                    <img src="{{img_url feature_image}}" alt="{{title}}" />
+                    {{else}}{{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{title}}" />
+                    {{/if}}{{/if}}
+                </span></a>
+            </section>
+
+            <section class="tag-info">
+                <h3><a href="{{url}}">{{{name}}}</a></h3>
+                
+                
+                
+                {{#if description}}
+                    <p>{{description}}</p>
+                {{else}}
+                    <p>Posts about <i>{{name}}</i> stuff&hellip;</p>
+                {{/if}}
+                
+                {{#get "posts" filter="tags:{{slug}}"}}
+                <div class="tag-post-count">{{plural pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}</div>
+                {{/get}}
+            </section>
+        </div>
+
+    </article>
+    {{/foreach}}
+
+</main>
+{{/get}}

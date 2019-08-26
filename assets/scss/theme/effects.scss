@@ -1,3 +1,7 @@
 .rotate-45 {
     transform: rotateZ(45deg);
 }
+
+.glow {
+    @include text-stroke(1, #000000);
+}
