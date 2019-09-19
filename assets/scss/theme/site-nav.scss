@@ -4,11 +4,23 @@
         
         li {
             display: inline-block;
-            list-style: none;
+            list-style: none; 
+            
+            &.nav-current::after {
+                content: "*";
+            }
         }
     }
     
     .post-header & {
         text-align:  center;
+    }
+}
+
+.home-template .site-nav {
+    li {
+        background-color:  #00000077;
+        border-radius: 8px;
+        padding: 0px 15px;
     }
 }

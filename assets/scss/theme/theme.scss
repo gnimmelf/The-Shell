@@ -1,6 +1,15 @@
 /* ==========================================================================
    4. General - The main styles for the the theme
    ========================================================================== */
+
+body {
+    background-image: url(/assets/images/hexagon-overlay.png);
+    background-repeat: no-repeat;
+    background-size: 400px;
+    background-position: right -170px top -60px;
+    background-attachment: fixed;
+}
+
 #site-head {
     position: relative;
     display: table;
@@ -11,6 +20,14 @@
     color: #a0add5;
     background: $selection-text-and-header-background no-repeat center center;
     background-size: cover;
+
+    &-content {
+        h1 > span, 
+        h2 > span {
+            background-color: #00000077;
+            padding: 2px 2px 0px;
+        }
+    }
 }
 
 #blog {
@@ -62,7 +79,7 @@
             font-weight: 300;
             letter-spacing: 0;
         }
-    }
+    }    
 }
 
 
@@ -74,6 +91,7 @@
     padding: 6px;
     font-size: 16px;
 }
+
 
 
 /* Every post, on every page, gets this style on its <article> tag */
