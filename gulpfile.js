@@ -43,7 +43,8 @@ function release() {
 
 function watchFiles() {
     browserSync.init({
-        proxy: "localhost:2368"
+        proxy: "localhost:2368",
+        open: false,
     });
 
     watch(['assets/scss/**/*.scss'], styles);
