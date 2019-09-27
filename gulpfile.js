@@ -21,7 +21,7 @@ function styles() {
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(sourcemaps.write())
-        .pipe(autoprefixer({browsers: ['last 2 versions']}))
+        .pipe(autoprefixer())
         .pipe(gulp.dest('assets/css/'))
         .pipe(browserSync.stream());
 }

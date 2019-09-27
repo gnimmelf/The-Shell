@@ -104,7 +104,20 @@ body {
     border-bottom: $border 1px solid;
     word-break: break-word;
     hyphens: auto;
+
+    a {
+        color: #846d8f;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+            color: lighten(#846d8f, 10%);
+        }
+    }
     
+    .tag-post-count {
+        text-align: right;
+    }
+
     &-title {
         color: $heading;
         margin:0;
@@ -155,19 +168,7 @@ body {
                 color: $selection-background-and-link-hover;
             }
         }
-    }
-    a {
-        color: #846d8f;
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-            color: lighten(#846d8f, 10%);
-        }
-    }
-    
-    .tag-post-count {
-        text-align: right;
-    }
+    }    
 }
 
 .user {

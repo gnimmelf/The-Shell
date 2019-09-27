@@ -29,6 +29,10 @@
             {{content}}
         </section>
 
+        <span class="post-meta">Posted <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
+
+        <hr />
+
         <footer class="post-footer">
 
             {{#if primary_author}}
