@@ -8,6 +8,10 @@ body {
     background-size: 400px;
     background-position: right -170px top -60px;
     background-attachment: fixed;
+
+    a {
+        text-decoration-line: none;
+    }
 }
 
 #site-head {
@@ -104,15 +108,6 @@ body {
     border-bottom: $border 1px solid;
     word-break: break-word;
     hyphens: auto;
-
-    a {
-        color: #846d8f;
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-            color: lighten(#846d8f, 10%);
-        }
-    }
     
     .tag-post-count {
         text-align: right;
@@ -152,7 +147,7 @@ body {
 
         p {
             margin: 1.6rem 0 0 0;
-        }
+        }       
     }
     &-meta {
         display: inline-block;
@@ -169,6 +164,21 @@ body {
             }
         }
     }    
+    &-content a {
+        color: #846d8f;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+            color: lighten(#846d8f, 10%);
+        }
+    }
+
+    &-read-more {
+        background-color:  #00000077;
+        border-radius: 8px;
+        padding: 0px 15px;
+        float: right;            
+    }
 }
 
 .user {
