@@ -1,0 +1,19 @@
+#ghost-search-widget {
+    position: relative;
+    #ghost-search-field {
+        border-radius: 5px;
+        outline-color: transparent;
+        text-align: center;
+        background-color: rgba( $river-bed, .7);
+    }
+    #ghost-search-results {
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+        background-color: rgba( $river-bed, .7);
+        border-radius: 5px;
+        a {
+            display: block;
+        }
+    }
+}

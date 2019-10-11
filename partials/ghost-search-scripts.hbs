@@ -1,0 +1,37 @@
+{{! https://github.com/HauntedThemes/ghost-search }}
+<script type="text/javascript" src="https://unpkg.com/@tryghost/content-api"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ghost-search@1.0.1/dist/ghost-search.min.js"></script>
+<script type="text/javascript">
+    (function (ghost_search) {
+        if (typeof(ghost_search) !== 'object') { return; };
+        
+        ghost_search = Object.assign({
+            key: '22444f78447824223cefc48062', // This is just a demo key. Replace the key with a real one. See Step 3.
+            url: 'https://demo.ghost.io', // This is just a demo host. Replace the host with a real one. See Step 3.        
+        }, ghost_search || {});        
+
+        var ghostSearch = new GhostSearch(ghost_search);
+
+        console.log('ghostSearch', ghostSearch)
+
+        /* Events */
+        var searchField = document.querySelector(ghostSearch.input);
+        var resultElement = document.querySelector(ghostSearch.results);
+
+        searchField.addEventListener('focus', (event) => {
+            /* Remember `html { scroll-behavior: smooth; }` */
+            document.getElementById('ghost-search-focus-anchor').scrollIntoView(true);
+        });
+
+        searchField.addEventListener('blur', (event) => {
+            event.target.value = '';
+            setTimeout(function() {
+                // `setTimeout` lets a click on a searchresult happen before clearing
+                resultElement.innerHTML = '';
+            }, 200);
+        });
+
+
+
+    })(window.ghost_search);    
+</script>

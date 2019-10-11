@@ -6,17 +6,18 @@ Nest selectors and move stuff into their own `kg-<whatever>.scss`-file.
 .post-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
     max-width: 920px;
 }
 
-.post-template .post-content > p:first-child {
+.post-template .post-content>p:first-child {
     font-size: 1.25em;
     line-height: 1.5em;
 }
 
+
 /* Preventing full-width image overlap with post image.  */
-.post-image + .post-content .kg-content *:first-child .kg-image {
+
+.post-image+.post-content .kg-content *:first-child .kg-image {
     width: 100%;
 }
 
@@ -52,55 +53,8 @@ Nest selectors and move stuff into their own `kg-<whatever>.scss`-file.
     padding: 0 1.5em;
 }
 
-.kg-embed-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 100%;
-}
-
-.kg-embed-card .fluid-width-video-wrapper {
-    margin: 0;
-}
-
-
 @media (max-width: 1040px) {
     .post-content .kg-width-full .kg-image {
         width: 100vw;
     }
-}
-
-.kg-gallery-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 1040px;
-    width: 100vw;
-}
-
-.kg-gallery-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.kg-gallery-image img {
-    display: block;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.kg-gallery-row:not(:first-of-type) {
-    margin: 0.75em 0 0 0;
-}
-
-.kg-gallery-image:not(:first-of-type) {
-    margin: 0 0 0 0.75em;
-}
-
-.kg-gallery-card + .kg-image-card.kg-width-wide,
-.kg-gallery-card + .kg-gallery-card,
-.kg-image-card.kg-width-wide + .kg-gallery-card,
-.kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
-    margin: -2.25em 0 3em;
 }

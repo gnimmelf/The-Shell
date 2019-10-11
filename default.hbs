@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     {{! Document Settings }}
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
@@ -19,22 +20,39 @@
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
-<body class="{{body_class}}">
 
+<body class="{{body_class}}">
     {{! Everything else gets inserted here }}
     {{{body}}}
 
     <footer class="site-footer">
         <!-- <a class="subscribe icon-feed" href="{{@site.url}}/rss/"><span class="tooltip">Subscribe!</span></a> -->
         <div class="inner">
-             <section class="copyright">All content copyright <a href="/">{{@site.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
-             <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org"><span class="icon-ghost-text">Ghost</span></a> in <a href="https://github.com/mityalebedev/The-Shell">The Shell</a> theme.</section>
+            <section class="copyright">All content copyright <a href="/">{{@site.title}}</a> &copy;
+                {{date format="YYYY"}} &bull; All rights reserved.</section>
+            <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org"><span
+                        class="icon-ghost-text">Ghost</span></a> in <a
+                    href="https://github.com/mityalebedev/The-Shell">The Shell</a> theme.</section>
         </div>
     </footer>
+    
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        })
+    </script>
+
+    {{> "ghost-search-scripts"}}
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 
     {{! Scripts }}
 </body>
+
 </html>

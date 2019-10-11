@@ -5,16 +5,19 @@
 
 <main class="content" role="main">
 
-    <article class="{{post_class}}">
-
+    <article class="post">
         {{! Each post has the blog logo at the top, with a link back to the home page }}
         {{> post-header}}
+    </article>
+
+    <article class="{{post_class}}">
 
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
         {{! Everything below outputs content of the the post which has been published }}
-        <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
+        <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
+            {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
 
         <h1 class="post-title">{{{title}}}</h1>
 
@@ -23,23 +26,23 @@
             <img src="{{img_url feature_image}}" alt="{{title}}" />
         </div>
         {{/if}}
-        
-        <section class="post-content">
 
+        <section class="post-content">
             {{content}}
         </section>
 
-        <span class="post-meta">Posted <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
+        <span class="post-meta">Posted <time
+                datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}on
+            {{tags separator=" | "}}{{/if}}</span>
 
         <hr />
 
         <footer class="post-footer">
-
             {{#if primary_author}}
-                <section class="author">
-                    <h4>{{primary_author.name}}</h4>
-                    <p>{{primary_author.bio}}</p>
-                </section>
+            <section class="author">
+                <h4>{{primary_author.name}}</h4>
+                <p>{{primary_author.bio}}</p>
+            </section>
             {{/if}}
 
             <section class="share">
@@ -53,7 +56,7 @@
                     <span class="hidden">Facebook</span>
                 </a>
                 <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
             </section>

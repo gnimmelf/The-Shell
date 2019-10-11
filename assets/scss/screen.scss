@@ -10,7 +10,12 @@
 @import "theme/pagination";
 @import "theme/footer";
 @import "theme/media";
+// Koenig cards
 @import "theme/kg-base";
-@import "theme/kg-bookmark";
+@import "theme/kg-bookmark-card";
+@import "theme/kg-gallery-card";
+@import "theme/kg-embed-card";
+// Custom stuff
+@import "theme/ghost-search";
 @import "theme/aspect-ratio";
 @import "theme/effects";

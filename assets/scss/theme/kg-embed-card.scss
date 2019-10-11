@@ -1,0 +1,13 @@
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+    iframe {
+        max-width: 100%;
+    }
+}
+
+.kg-embed-card .fluid-width-video-wrapper {
+    margin: 0;
+}
